@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.barra-lateral {
+  display: none;
+  /* Oculta la barra lateral en dispositivos móviles */
+}
+
+.contenedor-conversacion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .menu-button{
+    display: none;
+  }
+  
+  .contenedor-principal {
+    display: grid;
+    grid-template-rows: auto auto 1fr; 
+    grid-template-columns: 30% 70%; /* Dos columnas: lista de chats y área de conversación */
+    grid-template-areas:
+      "navbar navbar"
+      "menu menu"
+      "lista-chats conversacion";
+    height: 100vh;
+    width: 100%;
+  }
+
+
+  .navbar {
+    grid-area: navbar;
+   width: 100%;
+  }
+  .menu{
+    grid-area: menu;
+    display: flex;
+    background-color: $primary-color;
+    li a{
+      color:white;
+    }
+  }
+
+  .barra-lateral {
+    grid-area: lista-chats;
+    display: block; /* Muestra la barra lateral en dispositivos de escritorio */
+    background-color: #f0f0f0; /* Asegura el color de fondo de la barra lateral */
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* Scroll si es necesario */
+  }
+
+  .contenedor-buscador-chats {
+    grid-area: lista-chats;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .contenedor-conversacion {
+    grid-area: conversacion;
+    height: 100vh;
+  }
+  .input-mensaje {
+    grid-area: conversacion;
+    z-index: 10;
+    position: relative; /* Asegura que el input se mantenga en la posición correcta */
+  }
+
+  .boton-mostrar {
+    display: none; /* Oculta el botón "Mostrar Conversaciones" en dispositivos de escritorio */
+  }
+
+  .lista-chats{
+    display: flex;
+    flex-direction: column;
+    li{
+      display: flex;
+    }
+  }
+
+
+
+}

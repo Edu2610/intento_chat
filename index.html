@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Chat's</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="contenedor-principal">
+        <div class="navbar">
+
+            <div class="user-info">
+                <img src="assets/img/Wonderland_coffee.jpg" alt="Foto de perfil" class="profile-pic">
+                <div class="user-details">
+                    <span class="user-name">Eduardo</span>
+                    <span class="user-status">Front-end en camino</span>
+                </div>
+            </div>
+
+
+            <button class="menu-button" onclick="toggleMenu()">Menú</button>
+
+        </div>
+        <ul class="menu" id="menu">
+            <li><a href="#pagina-principal">Página principal</a></li>
+            <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+            <li><a href="#manuales-tutoriales">Manuales y tutoriales</a></li>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#calendario">Calendario</a></li>
+            <li><a href="#administracion-perfil">Administración de perfil de usuario</a></li>
+            <li><a href="#organigrama-empresa">Organigrama de la empresa</a></li>
+            <li><a href="#chat-vendedores-soporte">Chat para vendedores y equipo de soporte</a></li>
+        </ul>
+
+
+        <button class="boton-mostrar" onclick="toggleChats()">Mostrar Conversaciones</button>
+
+        <!-- Contenedor del buscador de conversaciones y de los chats -->
+        <div class="contenedor-buscador-chats barra-lateral" id="buscador-chats">
+            <!-- Buscador de conversaciones -->
+            <div class="contenedor-buscador">
+                <div class="barra-buscador">
+                    <input type="text" placeholder="Buscar conversaciones...">
+                    <button
+                        class="icono-buscar"><!-- Icono de búsqueda (puede ser un SVG o ícono de fuente) --></button>
+                </div>
+            </div>
+
+            <!-- Lista de chats -->
+            <ul class="lista-chats">
+                <li class="chat">
+                    <img src="ruta-a-imagen-1.jpg" alt="Foto de perfil" class="foto-chat">
+                    <div class="detalle-chat">
+                        <span class="nombre-chat">Alejandro</span>
+                        <span class="mensaje-chat">Lorem ipsum, dolor s</span>
+                    </div>
+                    <span class="hora-chat">jueves</span>
+                </li>
+                <li class="chat">
+                    <img src="ruta-a-imagen-1.jpg" alt="Foto de perfil" class="foto-chat">
+                    <div class="detalle-chat">
+                        <span class="nombre-chat">Bárbara</span>
+                        <span class="mensaje-chat" id="barbara_chat"><b>Lorem ipsum, dolor s</b></span>
+                    </div>
+                    <span class="hora-chat">jueves</span>
+                </li>
+                <li class="chat">
+                    <img src="ruta-a-imagen-1.jpg" alt="Foto de perfil" class="foto-chat">
+                    <div class="detalle-chat">
+                        <span class="nombre-chat">Claudio</span>
+                        <span class="mensaje-chat">Lorem ipsum, dolor s</span>
+                    </div>
+                    <span class="hora-chat">jueves</span>
+                </li>
+                <li class="chat">
+                    <img src="ruta-a-imagen-1.jpg" alt="Foto de perfil" class="foto-chat">
+                    <div class="detalle-chat">
+                        <span class="nombre-chat">Daniel</span>
+                        <span class="mensaje-chat">Lorem ipsum, dolor s</span>
+                    </div>
+                    <span class="hora-chat">jueves</span>
+                </li>
+                <li class="chat">
+                    <img src="ruta-a-imagen-1.jpg" alt="Foto de perfil" class="foto-chat">
+                    <div class="detalle-chat">
+                        <span class="nombre-chat">Eduardo</span>
+                        <span class="mensaje-chat">Lorem ipsum, dolor s</span>
+                    </div>
+                    <span class="hora-chat">jueves</span>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+        <div class="contenedor-conversacion" id="conversacion" style="display: none;">
+            <div class="header-conversacion" style="display: flex; justify-content: space-between;">
+                <div style="display: flex;">
+                    <button class="boton-volver" onclick="volverAlMenu()">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 12L6 8L10 4" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <img src="#" alt="Foto de contacto" class="foto-contacto" id="foto-contacto">
+                    <div class="detalle-contacto">
+                        <span class="nombre-contacto" id="nombre-contacto">Nombre del Contacto</span>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle">Adjuntar</button>
+                    <div class="dropdown-content">
+                        <a href="#">Imagen</a>
+                        <a href="#">Video</a>
+                        <a href="#">Documento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="area-mensajes" id="area-mensajes">
+                <!-- Ejemplo de mensaje enviado por el usuario -->
+                <div class="mensaje emisor">
+                    <p>Hola, ¿cómo estás?</p>
+                </div>
+                <!-- Ejemplo de mensaje recibido -->
+                <div class="mensaje receptor">
+                    <p>¡Hola! Estoy bien, gracias. ¿Y tú?</p>
+                </div>
+            </div>
+            <div class="input-mensaje">
+                <input type="text" placeholder="Escribe un mensaje..." id="input-texto">
+                <button class="boton-enviar">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

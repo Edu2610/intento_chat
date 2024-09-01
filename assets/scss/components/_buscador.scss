@@ -1,0 +1,35 @@
+.contenedor-buscador {
+    margin-bottom: $spacing-unit;
+
+    .barra-buscador {
+        display: flex;
+        align-items: center;
+        background-color: $search-background-color;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        border: 1px solid $search-border-color;
+
+        input[type="text"] {
+            flex: 1;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: $font-size-base;
+            margin-left: 0.5rem;
+        }
+
+        .icono-buscar {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.contenedor-buscador-chats {
+    display: none; // Oculto por defecto, se mostrará al hacer clic en el botón
+    padding: $spacing-unit;
+    background-color: $search-background-color;
+}

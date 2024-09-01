@@ -1,0 +1,40 @@
+// Estilos del menú
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; // El menú está colapsado por defecto
+
+    li {
+        border-bottom: 1px solid #ddd;
+
+        a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: $text-color;
+
+            &:hover {
+                background-color: $hover-background;
+            }
+        }
+    }
+}
+
+
+.boton-mostrar {
+    width: 100%;
+    padding: $spacing-unit;
+    background-color: $color-btn-show;
+    color: $text-color-nav;
+    border: none;
+    cursor: pointer;
+    font-size: $font-size-base;
+    text-align: center;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: darken($color-btn-show, 20%);
+    }
+  }

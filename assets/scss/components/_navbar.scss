@@ -1,0 +1,50 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-unit;
+    background-color: $primary-color;
+
+
+    .user-info {
+        display: flex;
+        align-items: center;
+
+        .profile-pic {
+            width: 2.5rem; // Tamaño de la imagen de perfil
+            height: 2.5rem;
+            border-radius: 50%;
+            margin-right: 0.625rem; // Espaciado entre la imagen y el texto
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+            color: $text-color-nav;
+
+            .user-name {
+                font-weight: bold;
+                font-size: $font-size-base; // Tamaño de fuente del nombre
+            }
+
+            .user-status {
+                font-size: 0.75rem; // Tamaño de fuente para el estado
+                color: lighten($text-color-nav, 20%); // Color más claro para el estado
+            }
+        }
+    }
+
+    .menu-button {
+        background-color: transparent;
+        color: $text-color-nav;
+        border: none;
+        cursor: pointer;
+        font-size: $font-size-base; // Tamaño del texto del botón
+        transition: all 0.3s ease; // Transición suave para los efectos
+    
+        &:hover {
+          box-shadow: 0 0.15rem 0.1rem rgba(248, 247, 247, 0.137); // Efecto de sombra al pasar el mouse
+          transform: scale(1.05); // Efecto de zoom al pasar el mouse
+        }
+    }
+}

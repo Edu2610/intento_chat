@@ -1,0 +1,184 @@
+.lista-chats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .chat {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $search-border-color;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $chat-hover-color;
+        }
+
+        .foto-chat {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+
+        .detalle-chat {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            .nombre-chat {
+                font-weight: bold;
+                font-size: $font-size-base;
+                margin-bottom: 0.25rem;
+            }
+
+            .mensaje-chat {
+                font-size: 0.875rem;
+                color: $text-color;
+            }
+        }
+
+        .hora-chat {
+            font-size: 0.75rem;
+            color: $text-color;
+        }
+    }
+}
+
+
+
+//Contenedor de conversaciones
+
+.contenedor-conversacion {
+    display: flex; // Oculto por defecto
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+    border-left: 1px solid $border-color;
+    position: relative;
+    box-sizing: border-box;
+
+    .header-conversacion {
+        display: flex;
+        align-items: center;
+        padding: $spacing-unit;
+        background-color: $primary-color;
+        color: $text-color;
+        z-index: 10;
+
+        .boton-volver {
+            background-color: $primary-color;
+            color: $primary-color;
+            border: none;
+            font-size: $font-size-base;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-right: $spacing-unit; // Espacio entre la flecha y la foto
+            transition: color 0.3s ease;
+
+            svg {
+                width: 1rem;
+                height: 2rem;
+            }
+
+            &:hover {
+                color: darken($text-color, 10%);
+
+                svg path {
+                    stroke: darken($text-color, 10%);
+                }
+            }
+        }
+
+        .foto-contacto {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            margin-right: $spacing-unit;
+        }
+
+        .detalle-contacto {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+
+            .nombre-contacto {
+                font-weight: bold;
+                font-size: $font-size-base;
+            }
+        }
+    }
+
+    .area-mensajes {
+        flex: 1; // Ocupa todo el espacio restante
+        padding: $spacing-unit;
+        overflow-y: auto; // Permite scroll si el contenido excede el espacio disponible
+        background-color: #286867b5; // Color de fondo
+
+        .mensaje {
+            max-width: 70%; // Limita el ancho máximo del mensaje
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border-radius: 1rem;
+            font-size: $font-size-base;
+            line-height: 1.5;
+            position: relative;
+
+            p {
+                margin: 0;
+            }
+
+            &.emisor {
+                background-color: $primary-color; // Color de fondo para el emisor
+                color: #fff; // Color del texto para el emisor
+                margin-left: auto; // Alinea el mensaje a la derecha
+                border-bottom-right-radius: 0; // Ajusta el borde para diferenciar
+            }
+
+            &.receptor {
+                background-color: #e0e0e0; // Color de fondo para el receptor
+                color: #333; // Color del texto para el receptor
+                align-self: flex-start; // Alinea el mensaje a la izquierda
+                border-bottom-left-radius: 0; // Ajusta el borde para diferenciar
+            }
+        }
+    }
+
+    .input-mensaje {
+        display: flex;
+        align-items: center;
+        padding: $spacing-unit;
+        border-top: 1px solid $border-color;
+        position: fixed; // Fija el contenedor en la parte inferior de la pantalla
+        bottom: 0%; // Alinea el contenedor al borde inferior
+        width: 100vw; // Asegura que el contenedor ocupe todo el ancho de la ventana
+        background-color: $background-color; // Fondo del contenedor para que no sea transparente
+        z-index: 10;
+
+        input[type="text"] {
+            flex: 1;
+            border: 1px solid $border-color;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            outline: none;
+        }
+
+        .boton-enviar {
+            background-color: $primary-color;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            margin-left: $spacing-unit;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+            }
+        }
+    }
+}
